@@ -1,0 +1,25 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .input-group label {
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 427px;
+    height: 33.27px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+
+  input::placeholder{
+    font-family: "Space Grotesk", sans-serif;
+  }
+  
