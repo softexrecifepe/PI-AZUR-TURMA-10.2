@@ -5,13 +5,7 @@ import logo from '../../assets/cadastro.png'
 
 
 
-function FormCadastro() {
-  const [isPessoaFisica, setIsPessoaFisica] = useState(true);
-
-  const handlePessoaChange = (event) => {
-    setIsPessoaFisica(event.target.value === 'fisica');
-  };
-
+const FormJuridico = ({pessoaEscolhida}, {isFisica}) => {
   return (
     <div className="form-wrapper">
       <div className="form-image">
@@ -28,18 +22,16 @@ function FormCadastro() {
           <label>
             <input
               type="radio"
-              value="juridica"
-              checked={!isPessoaFisica}
-              onChange={handlePessoaChange}
+              checked={!isFisica}
+              onChange={() => pessoaEscolhida(false)}
             />
             Pessoa Jurídica
           </label>
           <label>
             <input
               type="radio"
-              value="fisica"
-              checked={isPessoaFisica}
-              onChange={handlePessoaChange}
+              checked={isFisica}
+              onChange={() => pessoaEscolhida(true)}
             />
             Pessoa Física
           </label>
@@ -47,7 +39,7 @@ function FormCadastro() {
 
         <form className="form-fields">
           <Input label="Email" type="email" placeholder="Digite seu email" />
-          <Input label="CPF" type="text" placeholder="Digite seu CPF" />
+          <Input label="CNPJ" type="text" placeholder="Digite seu CNPJ" />
           <Input label="Telefone" type="tel" placeholder="Digite seu telefone" />
           <Input label="Senha" type="password" placeholder="Digite sua senha" />
           <Input label="Confirmar Senha" type="password" placeholder="Confirme sua senha" />
@@ -65,4 +57,4 @@ function FormCadastro() {
   );
 }
 
-export default FormCadastro;
+export default FormJuridico;
