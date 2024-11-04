@@ -1,15 +1,43 @@
 import React, { useState } from 'react';
-import Input from './Input'; 
+import axios from 'axios';
+import input from './Input';
 import './FormCadastro.css';
-import logo from '../../assets/cadastro.png'
+import './Input.css';
+import logo from '../../assets/cadastro.png';
+
+
+const FormFisico = ({ pessoaEscolhida, isFisica }) => {
+
+  const endpointPf = 'http://localhost:3000/pf'
+  
+  const [usuario, setUsuario] = useState([]);
+  const [formData, setFormData] = useState({
+    email: "",
+    senha: "",
+    cpf: "",
+    telefone: "",
+  });
 
 
 
-const FormFisico = ({pessoaEscolhida}, {isFisica}) => {
+
+  const handleSubmit = async () => {
+    try {   
+      const response = await axios.post(endpointPf, formData);  
+      setUsuario([...usuario,response.data]) 
+      console.log('Dados enviados com sucesso:', response.data);
+      
+
+      // localStorage.setItem('cadastro', JSON.stringify(formData));
+    } catch (error) {
+      console.error('Erro ao enviar os dados:', error);
+    }
+  };
+
   return (
     <div className="form-wrapper">
       <div className="form-image">
-      <img src={logo}/>
+        <img src={logo} alt="Cadastro" />
       </div>
 
       <div className="form-container">
@@ -37,17 +65,37 @@ const FormFisico = ({pessoaEscolhida}, {isFisica}) => {
           </label>
         </div>
 
-        <form className="form-fields">
-          <Input label="Email" type="email" placeholder="Digite seu email" />
-          <Input label="CPF" type="text" placeholder="Digite seu CPF" />
-          <Input label="Telefone" type="tel" placeholder="Digite seu telefone" />
-          <Input label="Senha" type="password" placeholder="Digite sua senha" />
-          <Input label="Confirmar Senha" type="password" placeholder="Confirme sua senha" />
+        <div className="form-fields">
+          <div className='input-group'>
 
-          <button type="submit" className="form-button">
+            <label>Email</label>
+            <input type='email' placeholder='Digite seu email' value={formData.email} onChange={(e) =>
+              setFormData({...formData, email: e.target.value})
+            } />
+            
+            <label>CPF</label>
+            <input type="text" name="cpf" placeholder="Digite seu CPF" value={formData.cpf}  onChange={(e) =>
+              setFormData({...formData, cpf: e.target.value}) 
+            }/>
+
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="Digite seu telefone" value={formData.telefone} onChange={(e) =>
+              setFormData({...formData, telefone: e.target.value}) 
+            } />
+            
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="Digite sua senha" value={formData.senha} onChange={(e) =>
+              setFormData({...formData, senha: e.target.value}) 
+            } />
+            
+            <label>Confirmar Senha</label>
+            <input type="password" name="confirmarSenha" placeholder="Confirme sua senha" />
+          </div>
+
+          <button type="button" className="form-button" onClick={handleSubmit}>
             Cadastrar
           </button>
-        </form>
+        </div>
 
         <div className="form-footer">
           <p>Já tem uma conta? Faça seu <a href="/login">Login</a></p>
@@ -55,6 +103,6 @@ const FormFisico = ({pessoaEscolhida}, {isFisica}) => {
       </div>
     </div>
   );
-}
+};
 
 export default FormFisico;
