@@ -1,6 +1,6 @@
 import React from "react";
 import './Notfound.css';
-import exclamationMark from '/workspaces/PI-AZUR-TURMA-10.2/Projeto_Azur/src/assets/exclamation-mark.png';
+import exclamationMark from '/src/assets/exclamation-mark.png';
 
 const NotFound = () => {
     return (
