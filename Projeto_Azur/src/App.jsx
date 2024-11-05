@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Login from './pages/login.jsx'
 import Cadastro from './pages/cadastro.jsx'
 import NotFound from "./components/Notfound/Notfound.jsx"
+import Teste from "./pages/teste.jsx"
 
 
 function App() {
