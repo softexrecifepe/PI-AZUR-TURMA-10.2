@@ -1,122 +1,109 @@
 {
-    "pf": [
-      {
-        "id": "aa68",
-        "email": "",
-        "cpf": "",
-        "telefone": "",
-        "senha": "",
-        "confirmarSenha": ""
-      },
-      {
-        "id": "b34d",
-        "email": "",
-        "cpf": "",
-        "telefone": "",
-        "senha": "",
-        "confirmarSenha": ""
-      },
-      {
-        "id": "40c9"
-      },
-      {
-        "id": "86f5",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "d70d",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "7523",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "603a",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "0": {
-          "id": "603a",
-          "email": "",
-          "senha": "",
-          "cpf": "",
-          "telefone": ""
-        },
-        "id": "c5ee"
-      },
-      {
-        "0": {
-          "id": "603a",
-          "email": "",
-          "senha": "",
-          "cpf": "",
-          "telefone": ""
-        },
-        "id": "2f32"
-      },
-      {
-        "id": "dc18"
-      },
-      {
-        "id": "c09e"
-      },
-      {
-        "0": {
-          "id": "603a",
-          "email": "",
-          "senha": "",
-          "cpf": "",
-          "telefone": ""
-        },
-        "id": "13e8"
-      },
-      {
-        "id": "d774",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "af2c",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "3b00"
-      },
-      {
-        "id": "1d8c",
-        "email": "",
-        "senha": "",
-        "cpf": "",
-        "telefone": ""
-      },
-      {
-        "id": "a1b1"
-      },
-      {
-        "id": "16e4",
-        "email": "oiuoiu",
-        "senha": "oiuoiu",
-        "cpf": "oiuoiu",
-        "telefone": "oiuoiu"
-      }
-    ]
-    
-  }
+  "pf": [
+    {
+      "id": "fed8",
+      "email": "teste@gmail.com",
+      "cpf": "13473829412",
+      "telefone": "888",
+      "senha": "66666666Da",
+      "confirmarSenha": "66666666Da"
+    },
+    {
+      "id": "aa68",
+      "email": "",
+      "cpf": "",
+      "telefone": "",
+      "senha": "",
+      "confirmarSenha": ""
+    },
+    {
+      "id": "b34d",
+      "email": "",
+      "cpf": "",
+      "telefone": "",
+      "senha": "",
+      "confirmarSenha": ""
+    },
+    {
+      "id": "40c9"
+    },
+    {
+      "id": "86f5",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "d70d",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "7523",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "603a",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "c5ee"
+    },
+    {
+      "id": "2f32"
+    },
+    {
+      "id": "dc18"
+    },
+    {
+      "id": "c09e"
+    },
+    {
+      "id": "13e8"
+    },
+    {
+      "id": "d774",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "af2c",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "3b00"
+    },
+    {
+      "id": "1d8c",
+      "email": "",
+      "senha": "",
+      "cpf": "",
+      "telefone": ""
+    },
+    {
+      "id": "a1b1"
+    },
+    {
+      "id": "16e4",
+      "email": "oiuoiu",
+      "senha": "oiuoiu",
+      "cpf": "oiuoiu",
+      "telefone": "oiuoiu"
+    }
+  ],
+  "pj": []
+}

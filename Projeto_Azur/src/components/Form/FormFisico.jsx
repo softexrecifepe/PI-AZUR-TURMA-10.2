@@ -7,31 +7,30 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
 const FormFisico = ({ pessoaEscolhida, isFisica }) => {
-  const endpointPf = 'http://localhost:3000/pf';
-
+  const endpointPf = 'http://localhost:3000/pf/';
+  
   const [usuario, setUsuario] = useState([]);
   const [formData, setFormData] = useState({
     email: "",
     senha: "",
-    confirmarSenha: "",  // Adicionado ao estado
+    confirmarSenha: "",
     cpf: "",
-    telefone: "",
+    telefone: ""
   });
 
   const validaCPF = (cpf) => {
-    cpf = cpf.replace(/[^\d]+/g, ''); // Remove tudo que não é número
+    cpf = cpf.replace(/[^\d]+/g, '');
   
-    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Verifica tamanho e repetição de dígitos
-  
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
     const calcDigito = (factor) =>
       cpf
         .slice(0, factor - 1)
         .split('')
         .reduce((sum, num, i) => sum + num * (factor - i), 0) * 10 % 11 % 10;
-  
+
     return calcDigito(10) === +cpf[9] && calcDigito(11) === +cpf[10];
   };
-  
 
   const validaForm = () => {
     const { email, senha, confirmarSenha, cpf, telefone } = formData;
@@ -80,7 +79,7 @@ const FormFisico = ({ pessoaEscolhida, isFisica }) => {
     }
   };
 
-   // Função para realizar uma requisição GET e buscar os usuários cadastrados
+  // Função para realizar uma requisição GET e buscar os usuários cadastrados
   // const fetchUsuarios = async () => {
   //   try {
   //     const response = await axios.get(endpointPf);
@@ -175,7 +174,7 @@ const FormFisico = ({ pessoaEscolhida, isFisica }) => {
               type="password" 
               name="confirmarSenha" 
               placeholder="Confirme sua senha" 
-              value={formData.confirmarSenha} // Adicionado ao campo
+              value={formData.confirmarSenha}
               onChange={(e) =>
                 setFormData({ ...formData, confirmarSenha: e.target.value })
               }
