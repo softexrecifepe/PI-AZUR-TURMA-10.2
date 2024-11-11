@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './FormCadastro.css';
 import './Input.css';
@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const FormFisico = ({ pessoaEscolhida, isFisica }) => {
   const endpointPf = 'http://localhost:3000/pf/';
   
-  const [usuario, setUsuario] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
   const [formData, setFormData] = useState({
     email: "",
     senha: "",
@@ -17,6 +17,19 @@ const FormFisico = ({ pessoaEscolhida, isFisica }) => {
     cpf: "",
     telefone: ""
   });
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get(endpointPf);
+        setUsuarios(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
 
   const validaCPF = (cpf) => {
     cpf = cpf.replace(/[^\d]+/g, '');
@@ -68,9 +81,19 @@ const FormFisico = ({ pessoaEscolhida, isFisica }) => {
   const handleSubmit = async () => {
     if (!validaForm()) return;
 
+    
+    const usuarioExistente = usuarios.find(
+      (usuario) => usuario.cpf === formData.cpf || usuario.email === formData.email
+    );
+
+    if (usuarioExistente) {
+      toast.error("Já existe um usuário cadastrado com este CPF ou email.");
+      return;
+    }
+
     try {   
       const response = await axios.post(endpointPf, formData);  
-      setUsuario([...usuario, response.data]); 
+      setUsuarios([...usuarios, response.data]); 
       toast.success("Cadastro realizado com sucesso!");
       console.log("Cadastro realizado com sucesso");
     } catch (error) {
@@ -78,19 +101,6 @@ const FormFisico = ({ pessoaEscolhida, isFisica }) => {
       toast.error("Erro ao realizar o cadastro."); 
     }
   };
-
-  // Função para realizar uma requisição GET e buscar os usuários cadastrados
-  // const fetchUsuarios = async () => {
-  //   try {
-  //     const response = await axios.get(endpointPf);
-  //     setUsuario(response.data);
-  //     console.log("Usuários cadastrados:", response.data);
-  //     toast.success("Usuários carregados com sucesso!");
-  //   } catch (error) {
-  //     console.error('Erro ao buscar os dados:', error);
-  //     toast.error("Erro ao carregar os usuários.");
-  //   }
-  // };
 
   return (
     <div className="form-wrapper">
