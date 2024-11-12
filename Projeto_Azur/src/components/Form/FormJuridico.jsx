@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './FormCadastro.css';
 import './Input.css';
@@ -9,20 +9,31 @@ import { ToastContainer, toast } from 'react-toastify';
 const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
   const endpointPj = 'http://localhost:3000/pj';
 
-  const [usuario, setUsuario] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
   const [formData, setFormData] = useState({
     email: "",
     cnpj: "",
     telefone: "",
     senha: "",
-    confirmarSenha: "",  // Adicionado ao estado
+    confirmarSenha: "",
   });
 
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get(endpointPj);
+        setUsuarios(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
+
   function validarCNPJ(cnpj) {
-    // Remove caracteres não numéricos (pontos, barras, traços)
     cnpj = cnpj.replace(/[^\d]+/g, '');
   
-    // Verifica se o CNPJ tem 14 dígitos
     if (cnpj.length !== 14) {
       return false;
     }
@@ -32,7 +43,6 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
       return false;
     }
   
-    // Validação do primeiro dígito verificador
     let soma = 0;
     let pesos = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
     for (let i = 0; i < 12; i++) {
@@ -41,7 +51,6 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
     let resto = soma % 11;
     let digito1 = (resto < 2) ? 0 : 11 - resto;
     
-    // Validação do segundo dígito verificador
     soma = 0;
     pesos = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
     for (let i = 0; i < 13; i++) {
@@ -50,12 +59,7 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
     resto = soma % 11;
     let digito2 = (resto < 2) ? 0 : 11 - resto;
   
-    // Compara os dígitos verificadores calculados com os fornecidos
-    if (parseInt(cnpj.charAt(12)) === digito1 && parseInt(cnpj.charAt(13)) === digito2) {
-      return true;
-    } else {
-      return false;
-    }
+    return parseInt(cnpj.charAt(12)) === digito1 && parseInt(cnpj.charAt(13)) === digito2;
   }
   
   const validaForm = () => {
@@ -88,6 +92,15 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
       return false;
     }
 
+    const usuarioExistente = usuarios.find(
+      (usuario) => usuario.cnpj === formData.cnpj
+    );
+
+    if (usuarioExistente) {
+      toast.error("Já existe um usuário cadastrado com este CNPJ.");
+      return false;
+    }
+
     return true;
   };
 
@@ -96,25 +109,12 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
 
     try {   
       const response = await axios.post(endpointPj, formData);  
-      setUsuario([...usuario, response.data]); 
+      setUsuarios([...usuarios, response.data]); 
       toast.success("Cadastro realizado com sucesso!");
       console.log("Cadastro realizado com sucesso");
     } catch (error) {
       console.error('Erro ao enviar os dados:', error);
       toast.error("Erro ao realizar o cadastro."); 
-    }
-  };
-
-   // Função para realizar uma requisição GET e buscar os usuários cadastrados
-  const fetchUsuarios = async () => {
-    try {
-      const response = await axios.get(endpointPf);
-      setUsuario(response.data);
-      console.log("Usuários cadastrados:", response.data);
-      toast.success("Usuários carregados com sucesso!");
-    } catch (error) {
-      console.error('Erro ao buscar os dados:', error);
-      toast.error("Erro ao carregar os usuários.");
     }
   };
 
@@ -200,7 +200,7 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
               type="password" 
               name="confirmarSenha" 
               placeholder="Confirme sua senha" 
-              value={formData.confirmarSenha} // Adicionado ao campo
+              value={formData.confirmarSenha}
               onChange={(e) =>
                 setFormData({ ...formData, confirmarSenha: e.target.value })
               }

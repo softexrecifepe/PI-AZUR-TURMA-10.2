@@ -5,7 +5,6 @@ import Cadastro from './pages/cadastro.jsx'
 import Home from './pages/home.jsx'
 import NotFound from "./components/Notfound/Notfound.jsx"
 
-
 function App() {
   return (
     <>
