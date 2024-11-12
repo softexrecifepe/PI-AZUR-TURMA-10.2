@@ -26,7 +26,7 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
     if (cnpj.length !== 14) {
       return false;
     }
-  
+
     // Impede que números repetidos como "00000000000000" ou "11111111111111" sejam validados
     if (/^(\d)\1{13}$/.test(cnpj)) {
       return false;
@@ -83,7 +83,7 @@ const Formjuridico = ({ pessoaEscolhida, isFisica }) => {
       return false;
     }
 
-    if (validarCNPJ(cnpj)) {
+    if (!validarCNPJ(cnpj)) {
       toast.error("CNPJ inválido.");
       return false;
     }

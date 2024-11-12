@@ -11,7 +11,8 @@ function FormLogin() {
   const endpointPj = 'http://localhost:3000/pj';
   const endpointPf = 'http://localhost:3000/pf';
 
-  const [usuario, setUsuario] = useState([]);
+  const [usuariopf, setUsuariopf] = useState([]);
+  const [usuariopj, setUsuariopj] = useState([]);
   const [verificar, setVerificar] = useState({
     email: "",
     senha: "",
@@ -20,8 +21,10 @@ function FormLogin() {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await axios.get(endpointPf);
-        setUsuario(response.data);
+        const responsepf = await axios.get(endpointPf);
+        const responsepj = await axios.get(endpointPj);
+        setUsuariopf(responsepf.data);
+        setUsuariopj(responsepj.data);
       } catch (error) {
         console.error('Erro ao buscar os dados:', error);
       }
@@ -49,18 +52,32 @@ function FormLogin() {
 
   const handleSubmit = async () => {
     if (!validaForm()) return;
-    const usuarioExistente = usuario.find(
-      (usuario) => usuario.email === verificar.email
+    const usuarioExistentepf = usuariopf.find(
+      (usuariopf) => usuariopf.email === verificar.email
     );
-    if (!usuarioExistente) {
+    const usuarioExistentepj = usuariopj.find(
+      (usuariopj) => usuariopj.email === verificar.email
+    );
+
+    
+    if (!usuarioExistentepf && !usuarioExistentepj) {
       toast.error("Não existe um usuário cadastrado com este email.");
       return;
     } else {
-      if (usuarioExistente.senha == verificar.senha){
-        
-      } else {
-        toast.error("Senha incorreta.");
-      return;
+      if (usuarioExistentepf){
+        if (usuarioExistentepf.senha == verificar.senha){
+          toast.success("Login realizado com sucesso!");
+        } else {
+          toast.error("Senha incorreta.");
+        return;
+        }
+      } else if (usuarioExistentepj){
+        if (usuarioExistentepj.senha == verificar.senha){
+          toast.success("Login realizado com sucesso!");
+        } else {
+          toast.error("Senha incorreta.");
+        return;
+        }
       }
     }
     
