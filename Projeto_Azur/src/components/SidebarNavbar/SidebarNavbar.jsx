@@ -1,5 +1,6 @@
 import React from 'react';
 import perfil from '../../assets/cadastro.png';
+import "./SidebarNavbar.css"
 import { CiHome } from "react-icons/ci";
 import { RiBuilding2Line } from "react-icons/ri";
 import { FaGear } from "react-icons/fa6";
