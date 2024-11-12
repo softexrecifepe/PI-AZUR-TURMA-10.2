@@ -4,7 +4,6 @@ import Login from './pages/login.jsx'
 import Cadastro from './pages/cadastro.jsx'
 import NotFound from "./components/Notfound/Notfound.jsx"
 
-
 function App() {
   return (
     <>
