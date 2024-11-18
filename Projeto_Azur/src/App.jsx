@@ -4,6 +4,8 @@ import Login from './pages/login.jsx'
 import Cadastro from './pages/cadastro.jsx'
 import Home from './pages/home.jsx'
 import NotFound from "./components/Notfound/Notfound.jsx"
+import ConfigUser from './pages/configuser.jsx'
+import ConfigAdm from './pages/configadm.jsx';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='*' element={<NotFound/>}/>
+        <Route path="/configuser" element={<ConfigUser />} />
+        <Route path="/configadm" element={<ConfigAdm />} />
       </Routes>
     </BrowserRouter>
   </>
