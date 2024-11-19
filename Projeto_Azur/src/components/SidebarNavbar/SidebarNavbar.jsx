@@ -14,12 +14,12 @@ const SidebarNavbar = () => {
       <nav className="sidebar">
         <div className="profile">
           <img src={perfil} alt="Profile Image" />
-          <h3>Bem-vindo</h3>
+          <p>Bem-vindo</p>
           <h2>Bruno Pires</h2>
         </div>
         <ul>
           <li>
-            <Link to="/" className="active">
+            <Link to="/home" className="active">
               <CiHome /> Home
             </Link>
           </li>
@@ -42,7 +42,7 @@ const SidebarNavbar = () => {
 
         <hr className="divider" />
 
-        <Link to="/sair" className="logout">
+        <Link to="/login" className="logout">
           <TbLogout /> Sair
         </Link>
       </nav>
@@ -50,6 +50,31 @@ const SidebarNavbar = () => {
         <header>
           <h1 className="color-main_content">Home</h1>
         </header>
+        <div className='home-content'>
+          <h1>
+            Olá, Bruno!
+          </h1>
+          <p>
+            Aqui está um resumo da sua jornada de aquisição
+          </p>
+          <div className='user-info'>
+            <div>
+              <button>
+                <h3>Imóvel Mauê</h3>
+              </button>
+              <h4>
+                Você está na Etapa 1 - Documentação
+              </h4>
+              <p>
+                1 de 7 passos completos
+              </p>
+            </div>
+            <div className='home-img'>
+              <img src={perfil} alt="Profile Image"/>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   );
