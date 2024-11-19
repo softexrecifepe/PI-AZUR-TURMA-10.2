@@ -13,16 +13,11 @@ body {
 
 .container {
     display: flex;
-<<<<<<< HEAD
-    height: 100vh;
-    width: 100vw;
-=======
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000; 
     height: 100vh;
->>>>>>> 01c5c631b0e57e9e5b5b02175168a87b6a9b035b
 }
 
 .sidebar {

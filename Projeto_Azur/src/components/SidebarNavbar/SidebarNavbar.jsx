@@ -46,39 +46,6 @@ const SidebarNavbar = () => {
           <TbLogout /> Sair
         </Link>
       </nav>
-<<<<<<< HEAD
-      <div className="main-content">
-        <header>
-          <h1 className="color-main_content">Home</h1>
-        </header>
-        <div className='home-content'>
-          <h1>
-            Olá, Bruno!
-          </h1>
-          <p>
-            Aqui está um resumo da sua jornada de aquisição
-          </p>
-          <div className='user-info'>
-            <div>
-              <button>
-                <h3>Imóvel Mauê</h3>
-              </button>
-              <h4>
-                Você está na Etapa 1 - Documentação
-              </h4>
-              <p>
-                1 de 7 passos completos
-              </p>
-            </div>
-            <div className='home-img'>
-              <img src={perfil} alt="Profile Image"/>
-            </div>
-
-          </div>
-        </div>
-      </div>
-=======
->>>>>>> 01c5c631b0e57e9e5b5b02175168a87b6a9b035b
     </div>
   );
 }

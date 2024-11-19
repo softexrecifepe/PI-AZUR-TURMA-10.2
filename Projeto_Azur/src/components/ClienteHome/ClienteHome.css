@@ -1,0 +1,44 @@
+.home-content {
+    font-size: 20px;
+    margin-left: 250px;
+}
+
+.user-info {
+    display: flex;
+    height: 20vw;
+    width: 82vw;
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+}
+
+
+.user-info button {
+    border: none;
+    border-radius: 10px;
+    height: 5vh;
+    width: 15vw;;
+}
+
+.user-info h4 {
+    padding: 40px 0px 40px 0px;
+}
+
+.user-info p {
+    font-size: medium;
+}
+
+.home-img {
+    display: flex;
+    align-items: center;
+}
+
+.home-img img{
+    margin-top: 0;
+    border-radius: 10%;
+    height: 30vh;
+    width: 15vw;
+}   
