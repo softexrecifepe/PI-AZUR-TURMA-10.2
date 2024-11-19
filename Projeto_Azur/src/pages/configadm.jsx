@@ -1,5 +1,5 @@
 import React from "react";
-import "./configadm.css";
+//import "./configadm.css";
 
 const ConfigAdm = () => {
   return (

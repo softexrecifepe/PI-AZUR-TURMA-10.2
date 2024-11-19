@@ -6,6 +6,7 @@ import Home from './pages/home.jsx'
 import NotFound from "./components/Notfound/Notfound.jsx"
 import ConfigUser from './pages/configuser.jsx'
 import ConfigAdm from './pages/configadm.jsx';
+import Admcliente from "./pages/admclientes.jsx"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='*' element={<NotFound/>}/>
         <Route path="/configuser" element={<ConfigUser />} />
         <Route path="/configadm" element={<ConfigAdm />} />
+        <Route path="/admcliente" element={<Admcliente />} />
       </Routes>
     </BrowserRouter>
   </>

@@ -46,11 +46,6 @@ const SidebarNavbar = () => {
           <TbLogout /> Sair
         </Link>
       </nav>
-      <div className="main-content">
-        <header>
-          <h1 className="color-main_content">Home</h1>
-        </header>
-      </div>
     </div>
   );
 }
