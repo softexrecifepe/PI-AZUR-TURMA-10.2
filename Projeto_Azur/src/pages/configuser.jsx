@@ -1,5 +1,5 @@
 import React from 'react';
-import './ConfigUser.css'; // Importe o CSS correspondente
+import './ConfigUser.css'; 
 
 const ConfigUser = () => {
   return (

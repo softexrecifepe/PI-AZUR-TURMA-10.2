@@ -5,8 +5,6 @@ const ConfigAdm = () => {
   return (
     <div className="settings-container">
       <div className="top-rectangle"></div> {/* Retângulo no topo */}
-      
-      {/* Seção de perfil com nome e e-mail */}
       <div className="profile-section">
         <div className="profile-header">
           <div className="profile-info">
@@ -18,8 +16,6 @@ const ConfigAdm = () => {
           </div>
         </div>
       </div>
-
-      {/* Campos de input */}
       <div className="inputs-section">
         <div className="inputs-left">
           <label htmlFor="full-name">Nome Completo</label>
@@ -42,8 +38,6 @@ const ConfigAdm = () => {
           <input type="password" id="confirm-password" name="confirm-password" />
         </div>
       </div>
-
-      {/* Botão de salvar */}
       <div className="save-button-section">
         <button className="save-button">Salvar</button>
       </div>
