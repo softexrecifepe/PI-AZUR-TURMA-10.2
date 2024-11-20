@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: flex-start; /* Alinha a tabela à esquerda */
+    
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+    font-family: "Space Grotesk", sans-serif;
+  }
+  
+  .tabela-clientes {
+    margin: 20px;
+    margin-left: 300px; /* Ajuste a margem esquerda conforme necessário */
+    font-family: Arial, sans-serif;
+  }
+  
+  .tabela-clientes h1 {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .tabela-clientes table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para aplicar o arredondamento */
+    margin-bottom: 490px;
+  }
+  
+  .tabela-clientes th, .tabela-clientes td {
+    border: 1px solid #fbfbfb;
+    padding: 96px; 
+    text-align: left;
+  }
+  
+  .tabela-clientes th {
+    background-color: #fbfbfb;
+    font-size: 14px;
+  }
+  
+  .tabela-clientes tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tabela-clientes tr:hover {
+    background-color: #ddd;
+  }
+  
+  .tabela-clientes button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tabela-clientes button:hover {
+    background-color: #45a049;
+  }
+  

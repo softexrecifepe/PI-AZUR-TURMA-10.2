@@ -1,5 +1,5 @@
 import React from 'react';
-import perfil from '../../assets/cadastro.png';
+import perfil from '../../assets/logoadm.png';
 import "./SidebarNavbar.css"
 import { CiHome } from "react-icons/ci";
 import { RiBuilding2Line } from "react-icons/ri";
