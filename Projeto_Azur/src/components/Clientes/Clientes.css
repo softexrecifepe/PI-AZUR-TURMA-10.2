@@ -1,7 +1,6 @@
-body {
+  .body {
     display: flex;
     justify-content: flex-start; /* Alinha a tabela à esquerda */
-    
     height: 100vh;
     margin: 0;
     background-color: #f9f9f9;

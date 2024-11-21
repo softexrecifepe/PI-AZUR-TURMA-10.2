@@ -19,7 +19,7 @@ const SidebarNavbar = () => {
         </div>
         <ul>
           <li>
-            <Link to="/" className="active">
+            <Link to="/home" className="active">
               <CiHome /> Home
             </Link>
           </li>
@@ -42,7 +42,7 @@ const SidebarNavbar = () => {
 
         <hr className="divider" />
 
-        <Link to="/sair" className="logout">
+        <Link to="/login" className="logout">
           <TbLogout /> Sair
         </Link>
       </nav>
