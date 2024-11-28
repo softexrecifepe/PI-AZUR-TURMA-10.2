@@ -1,0 +1,149 @@
+body {
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFFFF;
+  }
+  
+  .page-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    width: 100vw;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 250px; /* Desloca o conteúdo para a direita por causa da sidebar */
+  }
+  
+  .header-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .container {
+    width: 70%; /* Largura do contêiner para 70% da tela */
+    min-height: 300px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    /* Flexbox para centralizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 80px; /* Espaço suficiente para ficar abaixo do header */
+  
+    /* Aumentando o valor de margin-left para mover ainda mais para a direita */
+    margin-left: 350px; /* Ajuste esse valor conforme necessário */
+  }
+  
+  
+  h2 {
+    font-size: 24px;
+    color: #333333;
+  }
+  
+  .documents {
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: #555555;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead th {
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  tbody td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-accept {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .btn-reject {
+    background-color: #dc3545;
+    color: #ffffff;
+    margin-left: 10px;
+  }
+  
+  .status-finalized {
+    background-color: #bdeaf2;
+    color: #000000;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .status-pending {
+    background-color: #fff3cd;
+    color: #000000;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .doc-icon {
+    width: 24px;  
+    height: auto; 
+    margin-right: 10px; 
+  }
+  /* Estilo da mensagem de aprovação */
+.approval-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    border: 1px solid #c3e6cb;
+  }  
+  
